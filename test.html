@@ -1,0 +1,25 @@
+<?PHP
+require_once("./include/membersite_config.php");
+function ShowHTMLString($resultString){
+	$Options = array();
+  if(true == $fgmembersite->GetUserTypes($Options)){
+      foreach ($Options as $key => $value) {
+              $resultString = $resultString."<option value='".$value['id']."'>".$value['type_name']."</option>";
+      }  
+    } 
+    return true;
+}
+
+?>
+<html>
+<head>
+<script type="text/javascript">  
+      // notice the quotes around the ?php tag         
+      var htmlString="<?php   ?>";
+      alert(htmlString);
+    </script>
+</head>
+  <body>
+    
+  </body>
+</html>
